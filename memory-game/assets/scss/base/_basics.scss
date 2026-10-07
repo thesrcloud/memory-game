@@ -1,0 +1,45 @@
+@use '../abstracts/index' as *;
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --text-primary: #{$text-primary};
+    --text-inverse: #{$text-inverse};
+    --text-accent: #{$text-accent};
+    --bg-page: #{$bg-page};
+    --background-container: #{$background-container};
+    --background-overlay: #{$background-overlay};
+    --border-primary: #{$border-primary};
+    --border-inverse: #{$border-inverse};
+}
+
+body:has(#tb__switcher:checked) {
+    --text-primary: #{$dark-text-primary};
+    --text-inverse: #{$dark-text-inverse};
+    --text-accent: #{$dark-text-accent};
+    --bg-page: #{$dark-bg-page};
+    --background-container: #{$dark-bg-container};
+    --background-overlay: #{$dark-bg-overlay};
+    --border-primary: #{$dark-border-primary};
+    --border-inverse: #{$dark-border-inverse};
+}
+
+body {
+    font-family: $font-family;
+    font-weight: 400;
+    font-size: rem(16px);
+    line-height: 150%;
+    color: var(--text-primary);
+}
+
+#tb__switcher {
+    display: none;
+}
+
+.container {
+    width: rem(1440px);
+    padding: 0 rem(40px);
+    margin: 0 auto;
+}
