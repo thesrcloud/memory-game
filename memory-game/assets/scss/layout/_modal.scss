@@ -1,1 +1,56 @@
 @use '../abstracts/' as *;
+
+.modal {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(#000, 0.5);
+}
+
+.modal__content {
+    width: rem(500px);
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: rem(15px);
+    background-color: #fff;
+    border-radius: rem(50px);
+    padding: rem(20px) 0;
+}
+
+.modal__title {
+    @extend %heading-2;
+    display: none;
+    margin: 0;
+}
+
+.modal__steps {
+    @extend %heading-3;
+    display: none;
+    margin: 0;
+}
+
+.modal button {
+    @extend %reset-btn-styles;
+    height: fit-content;
+    background-color: var(--background-container);
+    color: var(--text-inverse);
+    padding: rem(10px) rem(20px);
+    border-radius: rem(20px);
+    transition: $hover-time;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.d-none {
+    display: none;
+}

@@ -65,7 +65,25 @@ addElement(document.querySelector(".modal"), "div", {
 });
 
 addElement(
-  document.querySelector(".modal"),
+  document.querySelector(".modal__content"),
+  "h2",
+  {
+    class: "modal__title",
+  },
+  "You Win!!!",
+);
+
+addElement(
+  document.querySelector(".modal__content"),
+  "h3",
+  {
+    class: "modal__steps",
+  },
+  "Steps",
+);
+
+addElement(
+  document.querySelector(".modal__content"),
   "button",
   {
     class: "modal__new-game",
@@ -74,7 +92,7 @@ addElement(
 );
 
 addElement(
-  document.querySelector(".modal"),
+  document.querySelector(".modal__content"),
   "button",
   {
     class: "modal__close",
@@ -85,6 +103,12 @@ addElement(
 let grid = document.querySelector(".main__grid");
 let steps = document.querySelector("#steps");
 let newGame = document.querySelector("#new__game");
+let modal = document.querySelector(".modal");
+let modalContent = document.querySelector(".modal__content");
+let modalTitle = document.querySelector(".modal__title");
+let modalScore = document.querySelector(".modal__steps");
+let modalNewGame = document.querySelector(".modal__new-game");
+let modalClose = document.querySelector(".modal__close");
 let openedPair = 0;
 let gameSteps = 0;
 let lastOpenedCardId;
@@ -127,7 +151,7 @@ grid.addEventListener("click", (e) => {
             openedPair++;
 
             if (openedPair == totalCardsValue / 2) {
-              getModal("Win");
+              getModal("win");
             }
           }
           lastOpenedCards.length = 0;
@@ -140,11 +164,15 @@ grid.addEventListener("click", (e) => {
 });
 
 newGame.addEventListener("click", resetGame);
+modalNewGame.addEventListener("click", resetGame);
+modalClose.addEventListener("click", getModal);
 
 function resetGame() {
   Array.from(grid.children).forEach((item) => {
     item.remove();
   });
+
+  getModal();
 
   openedPair = 0;
   gameSteps = 0;
@@ -201,4 +229,16 @@ function getCardsData(classes, repeatValue, numberOfCards) {
   }
 
   return generatedData;
+}
+
+function getModal(type) {
+  modal.classList.remove("d-flex");
+
+  if (type == "win") {
+    modal.classList.toggle("d-flex");
+    modalTitle.classList.add("d-flex");
+    modalScore.textContent = `Your Result: ${gameSteps} steps!`;
+    modalScore.classList.add("d-flex");
+    modal.classList.add("d-flex");
+  }
 }

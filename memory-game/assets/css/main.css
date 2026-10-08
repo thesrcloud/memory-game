@@ -351,14 +351,14 @@ template {
   font-style: normal;
   font-display: swap;
 }
-.header__btn-block button {
+.modal button, .header__btn-block button {
   display: block;
   background-color: transparent;
   border: none;
   outline: none;
 }
 
-.header__title {
+.modal__title, .header__title {
   font-family: "Inter", sans-serif;
   font-weight: 600;
   font-size: 3.75rem;
@@ -366,8 +366,16 @@ template {
   color: var(--text-primary);
 }
 
+.modal__steps {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 1.5rem;
+  line-height: 125%;
+  color: var(--text-primary);
+}
+
 @media (max-width: 380px) {
-  .header__title {
+  .modal__title, .header__title {
     font-family: "Inter", sans-serif;
     font-weight: 600;
     font-size: 2rem;
@@ -561,6 +569,58 @@ main {
   background-size: 70%;
   background-repeat: no-repeat;
   background-position: center;
+}
+
+.modal {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal__content {
+  width: 31.25rem;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.9375rem;
+  background-color: #fff;
+  border-radius: 3.125rem;
+  padding: 1.25rem 0;
+}
+
+.modal__title {
+  display: none;
+  margin: 0;
+}
+
+.modal__steps {
+  display: none;
+  margin: 0;
+}
+
+.modal button {
+  height: fit-content;
+  background-color: var(--background-container);
+  color: var(--text-inverse);
+  padding: 0.625rem 1.25rem;
+  border-radius: 1.25rem;
+  transition: 0.3s;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.d-none {
+  display: none;
 }
 
 /*# sourceMappingURL=main.css.map */
