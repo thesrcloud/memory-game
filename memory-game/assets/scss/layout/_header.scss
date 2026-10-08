@@ -9,176 +9,35 @@
 .header__wrapper {
     display: flex;
     justify-content: space-between;
-    align-items: center;
 }
 
-.header__logo {
-    @extend %reset-link-styles;
-    display: block;
-    width: rem(100px);
-    height: rem(60px);
-    background-image: url('../images/logo.svg');
-    background-size: cover;
-    background-repeat: no-repeat;
+.header__title {
+    @extend %heading-2;
+    margin: 0;
+
+    &::first-letter {
+        color: red;
+    }
 }
 
-.nav__list {
-    @extend %reset-ul-styles;
+.header__btn-block {
     display: flex;
     align-items: center;
-    padding-right: rem(44px);
-    gap: rem(42px);
+    gap: rem(20px);
+    align-self: self-end;
 
-    .nav__link {
-        @extend %reset-link-styles;
-        @extend %link-button-styles;
-        border-bottom: rem(2px) solid transparent;
+    button {
+        @extend %reset-btn-styles;
+        height: fit-content;
+        background-color: var(--background-container);
+        color: var(--text-inverse);
+        padding: rem(10px) rem(20px);
+        border-radius: rem(20px);
         transition: $hover-time;
-        padding-bottom: rem(2px);
-        position: relative;
+        cursor: pointer;
 
-        &::after {
-            content: '';
-            width: 100%;
-            height: rem(2px);
-            background-color: var(--text-primary);
-            position: absolute;
-            left: 0;
-            bottom: rem(-2px);
-            transition: $hover-time;
-            transform: scale(0);
-        }
-
-        @media (pointer: fine) and (hover: hover) {
-            &:hover {
-                &::after {
-                    content: '';
-                    transform: scale(1);
-                }
-            }
-
-        }
-    }
-}
-
-.header__block {
-    display: flex;
-    align-items: center;
-    gap: rem(24px);
-}
-
-.header__menu-link {
-    @extend %reset-link-styles;
-    @extend %link-button-styles;
-    width: fit-content;
-    display: flex;
-    align-items: flex-start;
-    gap: rem(8px);
-    transition: $hover-time;
-    position: relative;
-
-    &::after {
-        content: '';
-        width: 100%;
-        height: rem(2px);
-        background-color: var(--text-primary);
-        position: absolute;
-        left: 0;
-        bottom: rem(-2px);
-        transition: $hover-time;
-        transform: scale(0);
-    }
-
-    @media (pointer: fine) and (hover: hover) {
-        &:hover {
-            &::after {
-                content: '';
-                transform: scale(1);
-            }
-        }
-    }
-}
-
-.header__theme-switcher {
-    display: flex;
-    align-items: center;
-    gap: rem(8px);
-    border: rem(1px) solid var(--border-primary);
-    border-radius: rem(100px);
-    transition: $hover-time;
-    padding: rem(4px);
-
-    svg {
-        transition: $hover-time;
-        border-radius: 100%;
-    }
-
-    svg.day-mode {
-        background-color: var(--text-accent);
-    }
-
-    svg.night-mode {
-        background-color: initial;
-    }
-
-    path {
-        transition: $hover-time;
-    }
-
-    @media (pointer: fine) and (hover: hover) {
-        &:hover {
-            cursor: pointer;
-
-            svg.night-mode {
-                background-color: var(--border-inverse);
-
-                path {
-                    fill: var(--text-inverse);
-                }
-            }
-        }
-    }
-}
-
-
-body:has(#tb__switcher:checked) {
-    .header__logo {
-        @extend %reset-link-styles;
-        background-image: url('../images/logo-dark-mode.svg')
-    }
-
-    .header__menu-link svg path {
-        stroke: var(--text-primary);
-    }
-
-    .header__theme-switcher {
-
-        svg.day-mode {
-            background-color: initial;
-        }
-
-        svg.night-mode {
-            background-color: var(--text-accent);
-        }
-
-        path {
-            transition: $hover-time;
-            fill: var(--text-primary);
-        }
-
-        svg.day-mode {}
-
-        @media (pointer: fine) and (hover: hover) {
-            &:hover {
-
-                svg.day-mode {
-                    background-color: var(--border-primary);
-
-                    path {
-                        // fill: var(--text-primary);
-                    }
-                }
-            }
+        &:active {
+            transform: scale(0.9);
         }
     }
 }
