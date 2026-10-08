@@ -32,6 +32,13 @@ addElement(document.querySelector(".header__wrapper"), "div", {
 addElement(
   document.querySelector(".header__btn-block"),
   "span",
+  { class: "header__matches", id: "matches" },
+  "Matches: 0",
+);
+
+addElement(
+  document.querySelector(".header__btn-block"),
+  "span",
   { class: "header__game-steps", id: "steps" },
   "Steps: 0",
 );
@@ -102,6 +109,7 @@ addElement(
 
 let grid = document.querySelector(".main__grid");
 let steps = document.querySelector("#steps");
+let matches = document.querySelector("#matches");
 let newGame = document.querySelector("#new__game");
 let modal = document.querySelector(".modal");
 let modalContent = document.querySelector(".modal__content");
@@ -149,6 +157,7 @@ grid.addEventListener("click", (e) => {
               item.classList.add("blocked");
             });
             openedPair++;
+            matches.textContent = `Mathces: ${openedPair}`;
 
             if (openedPair == totalCardsValue / 2) {
               getModal("win");
@@ -181,6 +190,7 @@ function resetGame() {
   appStatus = "normal";
 
   steps.textContent = `Steps: ${gameSteps}`;
+  matches.textContent = `Mathces: ${openedPair}`;
   cardsData = getCardsData(cardsClasses, 2, totalCardsValue);
   getCards(cardsData, grid);
 }
