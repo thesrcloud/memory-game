@@ -1,0 +1,92 @@
+@use 'functions' as *;
+@use 'variables' as *;
+
+
+%reset-ul-styles {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+%reset-link-styles {
+    text-decoration: none;
+    color: inherit;
+}
+
+%reset-btn-styles {
+    display: block;
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+// Fonts:
+%heading-1 {
+    font-family: $font-family;
+    font-weight: 600;
+    font-size: rem(72px);
+    line-height: 105%;
+    color: var(--text-primary);
+}
+
+%heading--accent {
+    font-style: italic;
+}
+
+%heading-2 {
+    font-family: $font-family;
+    font-weight: 600;
+    font-size: rem(60px);
+    line-height: 125%;
+    color: var(--text-primary);
+}
+
+%heading-3 {
+    font-family: $font-family;
+    font-weight: 600;
+    font-size: rem(24px);
+    line-height: 125%;
+    color: var(--text-primary);
+}
+
+%caption {
+    font-family: $font-family;
+    font-weight: 600;
+    font-size: rem(10px);
+    line-height: 140%;
+    color: var(--text-primary);
+}
+
+%link-button-styles {
+    font-family: $font-family;
+    font-weight: 600;
+    font-size: rem(16px);
+    line-height: 150%;
+    color: var(--text-primary);
+}
+
+%burger-link {
+    font-family: $font-family;
+    font-weight: 600;
+    font-size: rem(32px);
+    line-height: 125%;
+    color: var(--text-primary);
+}
+
+@media (max-width: 380px) {
+    %heading-1 {
+        font-family: $font-family;
+        font-weight: 600;
+        font-size: rem(42px);
+        line-height: 115%;
+        color: var(--text-primary);
+    }
+
+    %heading-2 {
+        font-family: $font-family;
+        font-weight: 600;
+        font-size: rem(32px);
+        line-height: 125%;
+        color: var(--text-primary);
+    }
+}

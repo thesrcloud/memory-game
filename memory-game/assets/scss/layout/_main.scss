@@ -1,0 +1,112 @@
+@use '../abstracts/' as *;
+
+main {
+    display: flex;
+}
+
+.main__wrapper {
+    display: flex;
+    justify-content: center;
+    padding-top: rem(150px);
+}
+
+.main__grid {
+    background-color: var(--background-container);
+    width: fit-content;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat((4, 1fr));
+    gap: rem(10px) rem(10px);
+    padding: rem(10px);
+}
+
+.grid__card {
+    width: rem(130px);
+    height: rem(130px);
+    background-color: #fff;
+    position: relative;
+
+    &::after {
+        content: '';
+        width: 100%;
+        height: 100%;
+        background-image: url('../images/question-mark.webp');
+        background-color: var(--background-container);
+        background-size: 70%;
+        background-repeat: no-repeat;
+        background-position: center;
+        border: rem(2px) solid var(--border-primary);
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: $hover-time;
+        transform: scale(1.3);
+        opacity: 0;
+        overflow: hidden;
+    }
+
+    &.closed {
+        &::after {
+            opacity: 1;
+            top: 0;
+            left: 0;
+            transform: scale(1);
+        }
+    }
+}
+
+.one {
+    background-image: url('../images/affect.webp');
+    background-size: 70%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.two {
+    background-image: url('../images/angry-face.webp');
+    background-size: 70%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.three {
+    background-image: url('../images/care.webp');
+    background-size: 70%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.four {
+    background-image: url('../images/expensive.webp');
+    background-size: 70%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.five {
+    background-image: url('../images/happy.webp');
+    background-size: 70%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.six {
+    background-image: url('../images/shocked.webp');
+    background-size: 70%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.seven {
+    background-image: url('../images/smiley.webp');
+    background-size: 70%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.eight {
+    background-image: url('../images/verified.webp');
+    background-size: 70%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
