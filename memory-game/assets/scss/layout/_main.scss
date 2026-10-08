@@ -7,7 +7,7 @@ main {
 .main__wrapper {
     display: flex;
     justify-content: center;
-    padding-top: rem(150px);
+    // padding-top: rem(150px);
 }
 
 .main__grid {
@@ -109,4 +109,30 @@ main {
     background-size: 70%;
     background-repeat: no-repeat;
     background-position: center;
+}
+
+@media (max-width: 770px) {
+    .main__grid {
+        gap: rem(10px) rem(10px);
+        padding: rem(10px);
+    }
+
+    .grid__card {
+        width: rem(110px);
+        height: rem(110px);
+    }
+}
+
+@media (max-width: 580px) {
+    .main__grid {
+        width: rem(420px);
+        height: rem(420px);
+        gap: rem(10px) rem(10px);
+        padding: rem(10px);
+    }
+
+    .grid__card {
+        width: 100%;
+        height: 100%;
+    }
 }

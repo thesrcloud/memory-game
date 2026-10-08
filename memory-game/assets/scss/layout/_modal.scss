@@ -54,3 +54,11 @@
 .d-none {
     display: none;
 }
+
+@media (max-width: 540px) {
+    .modal__content {
+        width: fit-content;
+        padding: rem(30px);
+    }
+
+}

@@ -410,6 +410,14 @@ body:has(#tb__switcher:checked) {
 }
 
 body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 3.125rem;
+  background-image: url("../images/back-pic.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
   font-family: "Inter", sans-serif;
   font-weight: 400;
   font-size: 1rem;
@@ -427,9 +435,33 @@ body {
   margin: 0 auto;
 }
 
+@media (min-width: 2300px) {
+  :root {
+    font-size: 28px;
+  }
+}
+@media (min-width: 2000px) {
+  :root {
+    font-size: 18px;
+  }
+}
+@media (max-width: 1440px) {
+  .container {
+    width: 100%;
+  }
+}
+@media (max-width: 580px) {
+  .container {
+    padding: 0;
+  }
+}
 .header {
   display: flex;
   background-color: var(--bg-page);
+  border: 0.125rem solid var(--text-primary);
+  box-shadow: 0.0625rem 0.0625rem 3.9375rem red;
+  border-left: none;
+  border-right: none;
   padding: 1.25rem 0;
 }
 
@@ -464,6 +496,45 @@ body {
   transform: scale(0.9);
 }
 
+@media (max-width: 980px) {
+  .header__title {
+    font-size: 2.625rem;
+  }
+}
+@media (max-width: 840px) {
+  .header__title {
+    font-size: 2.0625rem;
+  }
+  .header__btn-block {
+    gap: 0.9375rem;
+  }
+}
+@media (max-width: 770px) {
+  .header__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.9375rem;
+  }
+  .header__title {
+    font-size: 2.75rem;
+  }
+  .header__btn-block {
+    align-self: initial;
+  }
+}
+@media (max-width: 580px) {
+  .header__wrapper {
+    gap: 0.9375rem;
+  }
+  .header__title {
+    font-size: 2.75rem;
+  }
+  .header__btn-block {
+    gap: 0.625rem;
+  }
+}
 main {
   display: flex;
 }
@@ -471,7 +542,6 @@ main {
 .main__wrapper {
   display: flex;
   justify-content: center;
-  padding-top: 9.375rem;
 }
 
 .main__grid {
@@ -571,6 +641,28 @@ main {
   background-position: center;
 }
 
+@media (max-width: 770px) {
+  .main__grid {
+    gap: 0.625rem 0.625rem;
+    padding: 0.625rem;
+  }
+  .grid__card {
+    width: 6.875rem;
+    height: 6.875rem;
+  }
+}
+@media (max-width: 580px) {
+  .main__grid {
+    width: 26.25rem;
+    height: 26.25rem;
+    gap: 0.625rem 0.625rem;
+    padding: 0.625rem;
+  }
+  .grid__card {
+    width: 100%;
+    height: 100%;
+  }
+}
 .modal {
   display: none;
   justify-content: center;
@@ -621,6 +713,13 @@ main {
 
 .d-none {
   display: none;
+}
+
+@media (max-width: 540px) {
+  .modal__content {
+    width: fit-content;
+    padding: 1.875rem;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */
